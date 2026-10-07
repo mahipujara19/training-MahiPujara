@@ -61,9 +61,9 @@ a {
 
     border-bottom: 1px solid var(--border-color);
 
-    position: sticky;
+    position: fixed;
     top: 0;
-
+    width: 100%;
     z-index: 100;
 }
 
@@ -89,8 +89,18 @@ a {
     text-decoration: none;
 
     color: var(--primary-color);
+    display: flex;
 }
+.logo-image {
+    width: 40px;
 
+    height: 40px;
+
+    margin-right: 0.5rem;
+
+    vertical-align: middle;
+    border-radius: 50%;
+}
 .nav-links {
     display: flex;
 
@@ -107,12 +117,16 @@ a {
     text-decoration: none;
 
     font-weight: 600;
-
+    padding: 0.5rem 1rem;
+    border-radius: 10%;
     color: var(--text-color);
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--surface-color);
+    background-color: var(--primary-color);
+    transform:translateY(2px);
+    transition:  transform 0.3s ease, background-color 0.3s ease;
 }
 
 
