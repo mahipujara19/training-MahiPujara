@@ -19,6 +19,7 @@
             <a href="#" class="logo">
                 <img src="./assets/icon1.png" alt="Brew Haven Coffee Logo" class="logo-image">
                 Brew Haven
+               
             </a>
 
             <ul class="nav-links">
@@ -37,6 +38,7 @@
                 <li>
                     <a href="#contact">Contact</a>
                 </li>
+              
             </ul>
 
         </nav>
@@ -250,10 +252,44 @@
                     fresh coffee and food every day.
                 </p>
 
+                
+
             </div>
 
         </section>
 
+        <!--    Find us -->
+            <section id="find-us" class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    Find us
+                </p>
+
+                <h2>
+                    Where would you find us???
+                </h2>
+
+                <div class="location">
+                    
+                    <p>
+                        123 Coffee Lane, Brewtown, USA
+                    </p>
+
+                    <p>
+                        Open Daily: 7am - 7pm
+                    </p>
+
+                </div>
+
+                <a href="#book" class="button">
+                    Book a Table
+                </a>
+
+            </div>
+
+        </section>
 
         <!-- Contact -->
 
@@ -276,8 +312,7 @@
             </div>
 
 
-            <form id="contact-form" class="contact-form">
-
+            <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
 
                     <label for="name">
@@ -290,7 +325,9 @@
                         name="name"
                         autocomplete="name"
                         required
+                        aria-describedby="name-error"
                     >
+                    <small id="name-error" class="field-error"></small>
 
                 </div>
 
@@ -307,7 +344,9 @@
                         name="email"
                         autocomplete="email"
                         required
+                        aria-describedby="email-error"
                     >
+                    <small id="email-error" class="field-error"></small>
 
                 </div>
 
@@ -323,14 +362,11 @@
                         name="message"
                         rows="6"
                         required
+                        aria-describedby="message-error"
                     ></textarea>
+                    <small id="message-error" class="field-error"></small>
 
                 </div>
-
-
-                <!-- JavaScript will eventually use this area -->
-
-                <p id="form-message" class="form-message"></p>
 
 
                 <button type="submit" class="button">
@@ -339,18 +375,65 @@
 
             </form>
 
+
         </section>
 
     </main>
 
 
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
 
         <p>
             &copy; 2026 Brew Haven Coffee. All rights reserved.
         </p>
 
-    </footer>
+    </footer> -->
+
+    <footer class="site-footer">
+    <!-- Top Action Bar: Brand Intro -->
+    <div class="footer-top">
+        <div class="footer-brand-pitch">
+            <h3 class="footer-logo">☕ Brew Haven</h3>
+            <p>Crafting flawless mornings with sustainably grown beans and artisan roasting techniques.</p>
+
+            <div class="footer-nav-col">
+            <h5>Follow US</h5>
+            <div class="social-links-wrapper">
+                <a href="#" class="social-icon-btn" aria-label="Instagram">📸</a>
+                <a href="#" class="social-icon-btn" aria-label="Facebook">👥</a>
+            </div>
+        </div>
+
+        </div>
+        
+             <div class="footer-nav-col">
+            <h5>Explore</h5>
+            <ul>
+                <li><a href="#hero">Home Base</a></li>
+                <li><a href="#menu">The Daily Menu</a></li>
+                <li><a href="#about">Our Coffee Journey</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+           <div class="footer-nav-col">
+            <h5>Get in Touch</h5>
+            <p class="contact-item">📍 123 Coffee Lane, Roast City</p>
+            <p class="contact-item">✉️ hello@brewhavencoffee.com</p>
+            <p class="contact-item">📞 +1 (555) 019-2834</p>
+        </div>
+    </div>
+
+
+    <!-- Bottom Legals -->
+    <div class="footer-bottom-bar">
+        <p>&copy; 2026 Brew Haven Coffee. All rights reserved.</p>
+        <div class="legal-sub-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
 
 
     <script src="script.js"></script>

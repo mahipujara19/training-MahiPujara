@@ -10,8 +10,7 @@
     --muted-color: #6f6a65;
 
     --border-color: #e5dfd7;
-
-    --max-width: 1100px;
+    
 }
 
 
@@ -42,14 +41,8 @@ body {
     line-height: 1.6;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
 
-a {
-    color: inherit;
-}
+
 
 
 /* --------------------
@@ -61,14 +54,14 @@ a {
 
     border-bottom: 1px solid var(--border-color);
 
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 100;
 }
 
 .navbar {
-    max-width: var(--max-width);
+  
 
     margin: 0 auto;
 
@@ -125,8 +118,7 @@ a {
 .nav-links a:hover {
     color: var(--surface-color);
     background-color: var(--primary-color);
-    transform:translateY(2px);
-    transition:  transform 0.3s ease, background-color 0.3s ease;
+    transition: background-color 1s ease;
 }
 
 
@@ -246,14 +238,14 @@ section {
 -------------------- */
 
 .menu-grid {
-    max-width: var(--max-width);
+    max-width: 1200px;
 
     margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(auto-fit, minmax(350px, 1fr));
 
     gap: 1.5rem;
 }
@@ -266,6 +258,9 @@ section {
     border-radius: 10px;
 
     padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-card h3 {
@@ -326,6 +321,13 @@ section {
 }
 
 
+#find-us h2 {
+    font-size: 2.5rem;
+
+    line-height: 1.2;
+}
+
+
 /* --------------------
    Contact
 -------------------- */
@@ -342,6 +344,13 @@ section {
     border-radius: 10px;
 
     border: 1px solid var(--border-color);
+}
+/* Red error text directly underneath the input fields */
+.field-error {
+    color: red;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
 }
 
 .form-group {
@@ -391,16 +400,164 @@ section {
    Footer
 -------------------- */
 
-.site-footer {
-    background-color: #211a16;
-
-    color: #d8d0c8;
-
+/* .site-footer {
+    background-color: #211a16; 
+    color: #9c9085;
+    padding: 3rem 1.5rem 2rem;
+    font-size: 0.85rem;
+    border-top: 3px solid var(--primary-color);
     text-align: center;
+} */
 
-    padding: 2rem 1.5rem;
+
+/* --------------------------------------------------
+    Footer UI
+-------------------------------------------------- */
+
+.site-footer {
+    background-color: #1e1713; /* Rich dark-espresso baseline background */
+    color: #e5dfd7;
+    padding: 5rem 2rem 2rem;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--primary-color);
 }
 
+/* Footer Top Row: Split Brand Pitch & Newsletter Box */
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    /* padding-bottom: 3rem; */
+    /* border-bottom: 1px solid #332822; */
+}
+
+
+
+.footer-brand-pitch .footer-logo {
+    font-size: 1.8rem;
+    color: var(--surface-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer-brand-pitch p {
+    color: #bfaea2;
+    line-height: 1.6;
+}
+
+
+.footer-nav-col h5 {
+    color: var(--surface-color);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Modern short indicator line under headings */
+.footer-nav-col h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-nav-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav-col ul a {
+    color: #bfaea2;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.footer-nav-col ul a:hover {
+    color: var(--accent-color);
+    transform: translateX(4px);
+}
+
+.contact-item {
+    margin-bottom: 0.8rem;
+    color: #bfaea2;
+}
+
+/* Formatted Clean Schedule Block */
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+    color: #bfaea2;
+    border-bottom: 1px dashed #332822;
+    padding-bottom: 0.4rem;
+}
+
+/* Interactive Social Pillars */
+.social-links-wrapper {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.social-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #2b211a;
+    border: 1px solid #42342c;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(217, 164, 65, 0.2);
+}
+
+/* Bottom Bar Copyright Layer */
+.footer-bottom-bar {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid #332822;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #8c7d73;
+}
+
+.legal-sub-links a {
+    color: #8c7d73;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.2s;
+}
+
+.legal-sub-links a:hover {
+    color: var(--surface-color);
+}
 
 /* --------------------
    Tablet
@@ -417,6 +574,15 @@ section {
             repeat(2, 1fr);
     }
 
+    .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    .footer-brand-pitch, .footer-newsletter {
+        max-width: 100%;
+    }
+
 }
 
 
@@ -424,7 +590,8 @@ section {
    Mobile
 -------------------- */
 
-@media (max-width: 600px) {
+
+@media screen and (max-width: 600px) {
 
     .navbar {
         flex-direction: column;
@@ -449,13 +616,18 @@ section {
     }
 
     .hero h1 {
-        font-size: 2.3rem;
+        font-size: 2rem;
     }
 
     .section-heading h2 {
         font-size: 2rem;
     }
-
+    #find-us h2 {
+        font-size: 2rem;
+    }
+    .about-content h2 {
+        font-size: 2rem;
+    }
     .menu-grid {
         grid-template-columns: 1fr;
     }
@@ -463,5 +635,240 @@ section {
     .contact-form {
         padding: 1.5rem;
     }
+    .site-footer {
+        padding: 3rem 1rem 1.5rem;
+        text-align: center;
+    }
+     .site-footer {
+        padding: 4rem 1rem 2rem;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .legal-sub-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .legal-sub-links a {
+        margin: 0;
+    }
 
 }
+
+
+
+.back-link {
+    color: var(--text-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.booking-page {
+    min-height: calc(100vh - 80px);
+    background:
+        radial-gradient(circle at 10% 5%, color-mix(in srgb, var(--accent-color) 18%, transparent), transparent 30%),
+        var(--background-color);
+}
+
+.booking-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
+    align-items: start;
+    gap: 5rem;
+}
+
+.booking-intro {
+    position: sticky;
+    top: 130px;
+    padding-top: 1rem;
+}
+
+.booking-intro h1 {
+    max-width: 620px;
+    margin: 0.8rem 0 1.25rem;
+    font-size: clamp(2.6rem, 5vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.booking-intro > p:not(.eyebrow) {
+    max-width: 560px;
+    color: var(--muted-color);
+    font-size: 1.08rem;
+}
+
+.booking-benefits {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.booking-benefits div {
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.booking-benefits span {
+    color: var(--muted-color);
+}
+
+.booking-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 24px 70px var(--shadow-color);
+}
+
+.booking-card-heading {
+    margin-bottom: 1.8rem;
+}
+
+.booking-card-heading h2 {
+    margin: 0.65rem 0 0.3rem;
+    font-size: 2rem;
+}
+
+.booking-card-heading p,
+.privacy-note {
+    margin: 0;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}
+
+.step-badge {
+    display: inline-flex;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: var(--hero-color);
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1.2rem;
+}
+
+.booking-card .form-group input,
+.booking-card .form-group select,
+.booking-card .form-group textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--input-color);
+    color: var(--text-color);
+    font: inherit;
+}
+
+.booking-card .form-group textarea {
+    min-height: 112px;
+    resize: vertical;
+}
+
+.booking-card .form-group input:focus,
+.booking-card .form-group select:focus,
+.booking-card .form-group textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+    border-color: var(--primary-color);
+}
+
+.character-count {
+    margin-top: 0.3rem;
+    text-align: right;
+    color: var(--muted-color);
+    font-size: 0.8rem;
+}
+
+.consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    margin: 0.2rem 0 0;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.consent-row input {
+    margin-top: 0.28rem;
+    accent-color: var(--primary-color);
+}
+
+.booking-submit {
+    width: 100%;
+    margin-top: 1.3rem;
+    padding: 0.95rem 1.2rem;
+}
+
+.privacy-note {
+    margin-top: 0.8rem;
+    text-align: center;
+}
+
+/* .booking-footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: var(--muted-color);
+    border-top: 1px solid var(--border-color);
+    background: var(--surface-color);
+} */
+
+@media (max-width: 960px) {
+    .booking-hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-top: 3rem;
+    }
+
+    .booking-intro {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .booking-hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        padding: 1.25rem;
+        border-radius: 14px;
+    }
+
+    .booking-benefits div {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+
+    .booking-intro h1 {
+        font-size: 2.6rem;
+    }
+}
+
+
+
+

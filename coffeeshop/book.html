@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table | Brew Haven Coffee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/icon1.png">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">
+                <img src="./assets/icon1.png" alt="Brew Haven Coffee Logo" class="logo-image">
+                Brew Haven
+            </a>
+
+            <div class="nav-actions">
+                <a href="index.html" class="back-link">← Back to home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="booking-page">
+        <section class="booking-hero">
+            <div class="booking-intro">
+                <p class="eyebrow">Reserve your spot</p>
+                <h1>A table is waiting for you.</h1>
+                <p>Choose your date, time and party size. We’ll take care of the coffee and the cozy atmosphere.</p>
+
+                <div class="booking-benefits" aria-label="Booking details">
+                    <div><strong>Open daily</strong><span>7:00 AM – 7:00 PM</span></div>
+                    <div><strong>Easy changes</strong><span>Contact us if your plans change</span></div>
+                    <div><strong>Small groups</strong><span>Online booking for up to 8 guests</span></div>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-card-heading">
+                    <span class="step-badge">Reservation</span>
+                    <h2>Book your table</h2>
+                    <p>Fields marked with * are required.</p>
+                </div>
+
+                <form id="booking-form" novalidate>
+                    <div class="booking-grid">
+                        <div class="form-group">
+                            <label for="booking-name">Name *</label>
+                            <input type="text" id="booking-name" name="name" autocomplete="name" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-email">Email *</label>
+                            <input type="email" id="booking-email" name="email" autocomplete="email" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-phone">Phone *</label>
+                            <input type="tel" id="booking-phone" name="phone" autocomplete="tel" placeholder="e.g. +1 555 012 3456" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-guests">Guests *</label>
+                            <select id="booking-guests" name="guests" required>
+                                <option value="">Select party size</option>
+                            </select>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-date">Date *</label>
+                            <input type="date" id="booking-date" name="date" required>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-time">Time *</label>
+                            <select id="booking-time" name="time" required>
+                                <option value="">Select a time</option>
+                            </select>
+                            <small class="field-error"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-seating">Seating preference</label>
+                        <select id="booking-seating" name="seating">
+                            <option value="No preference">No preference</option>
+                            <option value="Window">Window</option>
+                            <option value="Quiet corner">Quiet corner</option>
+                            <option value="Outdoor">Outdoor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-notes">Anything we should know?</label>
+                        <textarea id="booking-notes" name="notes" rows="4" maxlength="300" placeholder="Birthday, accessibility needs, high chair, or other notes..."></textarea>
+                        <div class="character-count"><span id="notes-count">0</span>/300</div>
+                    </div>
+
+                    <label class="consent-row">
+                        <input type="checkbox" id="booking-consent" name="consent">
+                        <span>I understand this demo sends reservation data to a mock endpoint only.</span>
+                    </label>
+                    <small id="consent-error" class="field-error"></small>
+
+                    <button type="submit" class="button booking-submit">Confirm Reservation</button>
+                    <p class="privacy-note">No payment is required for this demo reservation.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+        <footer class="site-footer">
+    <!-- Top Action Bar: Brand Intro -->
+    <div class="footer-top">
+        <div class="footer-brand-pitch">
+            <h3 class="footer-logo">☕ Brew Haven</h3>
+            <p>Crafting flawless mornings with sustainably grown beans and artisan roasting techniques.</p>
+
+            <div class="footer-nav-col">
+            <h5>Follow US</h5>
+            <div class="social-links-wrapper">
+                <a href="#" class="social-icon-btn" aria-label="Instagram">📸</a>
+                <a href="#" class="social-icon-btn" aria-label="Facebook">👥</a>
+            </div>
+        </div>
+
+        </div>
+        
+             <div class="footer-nav-col">
+            <h5>Explore</h5>
+            <ul>
+                <li><a href="#hero">Home Base</a></li>
+                <li><a href="#menu">The Daily Menu</a></li>
+                <li><a href="#about">Our Coffee Journey</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+           <div class="footer-nav-col">
+            <h5>Get in Touch</h5>
+            <p class="contact-item">📍 123 Coffee Lane, Roast City</p>
+            <p class="contact-item">✉️ hello@brewhavencoffee.com</p>
+            <p class="contact-item">📞 +1 (555) 019-2834</p>
+        </div>
+    </div>
+
+
+    <!-- Bottom Legals -->
+    <div class="footer-bottom-bar">
+        <p>&copy; 2026 Brew Haven Coffee. All rights reserved.</p>
+        <div class="legal-sub-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+    <script src="booking.js"></script>
+</body>
+</html>
